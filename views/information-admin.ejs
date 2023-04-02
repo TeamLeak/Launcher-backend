@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Information Control Tool.</title>
+    <%- include('includes/styles.ejs') %>
+</head>
+<body>
+<div class="row">
+    <div class="col-12 mb-3 text-center">
+        <div class="card">
+            <div class="card-body">
+                Welcome to the Information panel. Choose from the items available below, or <a href="#" onclick="history.back()">RETURN</a>.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h1>Information Controller</h1>
+                <i>Here you can add new newsletter!</i>
+                <form action="/information-admin" method="post">
+                    <div>
+                        <div class="mb-3" >
+                            <label for="title" class="form-label">Servername</label>
+                            <input type="text" class="form-control" id="title" aria-describedby="titleHelp" name="title" required value="<%- informationJSON.getName() %>">
+                            <div id="titleHelp" class="form-text">Set the servername.</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-3">
+                            <label for="versions" class="form-label">Version</label>
+                            <input type="text" class="form-control" id="versions" aria-describedby="versionHelp" name="version" required value="<%- informationJSON.getVersion() %>">
+                            <div id="versionHelp" class="form-text">Set the version for the server.</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-3">
+                            <label for="max_online" class="form-label">Max Online</label>
+                            <input type="text" class="form-control" id="max_online" aria-describedby="onlineHelp" name="max_online" required value="<%- informationJSON.getMaxOnline() %>">
+                            <div id="onlineHelp" class="form-text">Set the max online for the version. (INPUT INT)</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-3">
+                            <label for="tags" class="form-label">Server Tags</label>
+                            <input type="text" class="form-control" id="tags" aria-describedby="tagsHelp" name="tags" required value="<%- informationJSON.getTags() %>">
+                            <div id="tagsHelp" class="form-text">Set the tags for the server. (SEPARATOR = ' ' OR ';')</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-3">
+                            <label for="body" class="form-label">Description</label>
+                            <textarea id="body" class="form-control" name="body" required><%- informationJSON.getDescription() %></textarea>
+                            <div id="tagsHelp" class="form-text">Set the description for the server.</div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+
+<%- include('includes/footer.ejs') %>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Update Control Tool.</title>
+    <%- include('includes/styles.ejs') %>
+</head>
+<body>
+<div class="row">
+    <div class="col-12 mb-3 text-center">
+        <div class="card">
+            <div class="card-body">
+                Welcome to the Update panel. Add update from the form available below, or <a href="#" onclick="history.back()">RETURN</a>.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h1>Add Update</h1>
+                <i>Here you can add new update!</i>
+                <form action="/update-admin" method="post">
+                    <div>
+                        <div class="mb-3">
+                            <label for="body" class="form-label">CONTENT</label>
+                            <textarea id="body" class="form-control" name="body" required></textarea>
+                            <div id="tagsHelp" class="form-text">Input content of file.</div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Publish Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+<%- include('includes/footer.ejs') %>
+</html>

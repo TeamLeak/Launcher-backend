@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>LOGIN PANEL</title>
+    <%- include('includes/styles.ejs') %>
+</head>
+<body>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="col-sm-3">
+        <div class="card mx-auto">
+            <div class="card-body">
+                <h1>LOGIN PANEL</h1>
+                <i>Here you must log in into administrator account.</i>
+                <form action="/login" method="post">
+                    <div class="mb-3">
+                        <label for="usernameInput" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="usernameInput" name="username" aria-describedby="usernameHelp">
+                        <div id="usernameHelp" class="form-text">Enter the username!</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordInput" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="passwordInput" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">LOGIN</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<%- include('includes/footer.ejs') %>
+</html>

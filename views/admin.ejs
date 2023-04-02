@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>ADMIN PANEL</title>
+    <%- include('includes/styles.ejs') %>
+</head>
+<body>
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="row">
+        <div class="col-12 mb-3 text-center">
+            <div class="card">
+                <div class="card-body">
+                    Welcome to the ADMIN panel. Choose from the items available below, or exit.
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    News Panel.
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">News control panel.</h5>
+                    <p class="card-text">Allows you to add new news.</p>
+                    <a href="/newsletter-admin" class="btn btn-primary">GO</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Information Panel.
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Information control panel.</h5>
+                    <p class="card-text">Allows you to change server-info.</p>
+                    <a href="/information-admin" class="btn btn-primary">GO</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Updates Panel.
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Updates control panel.</h5>
+                    <p class="card-text">Allows you to publish new update.</p>
+                    <a href="/updates-admin" class="btn btn-primary">GO</a>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <div class="col-12 col-md-4"></div>
+
+        <div class="col-12 col-md-4 mt-auto">
+            <div class="card">
+                <div class="card-header">
+                    LOGOUT.
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h5 class="card-title">Allows you to logout.</h5>
+                        <p class="card-text">Bye, bye.</p>
+                        <a href="/logout" class="btn btn-primary">LOGOUT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mt-auto">
+            <div class="card">
+                <div class="card-header">
+                    Users list.
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h5 class="card-title">Allows you to see users.</h5>
+                        <p class="card-text">With password.</p>
+                        <a href="/users" class="btn btn-primary">GO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<%- include('includes/footer.ejs') %>
+</html>

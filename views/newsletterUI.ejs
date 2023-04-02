@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LauncherUI</title>
+<!-- Bootstrap CSS -->
+<%- include('includes/styles.ejs') %>
+<style>
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1 class="my-4" >Latest News</h1>
+    <% news.forEach(function(newsItem) { %>
+    <div class="card col-12 col-md-4 mt-auto mb-3 bg-dark text-light">
+    <div class="card-body">
+    <h5 class="card-title" ><%= newsItem.title %></h5>
+    <p class="card-text">
+    <small class="text-muted"><%= newsItem.date %></small>
+    <% if (newsItem.tags) { %>
+    <br>
+    <% newsItem.tags.split(' ').forEach(function(tag) { %>
+    <span class="badge bg-info"><%= tag %></span>
+    <% }); %>
+    <% } %>
+    </p>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newsModal<%= newsItem.id %>">
+    View
+    </button>
+    </div>
+    </div>
+    <div class="modal fade" id="newsModal<%= newsItem.id %>" tabindex="-1" aria-labelledby="newsModalLabel<%= newsItem.id %>" aria-hidden="true" >
+    <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-dark text-light">
+    <div class="modal-header">
+    <h5 class="modal-title" id="newsModalLabel<%= newsItem.id %>"><%= newsItem.title %></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    <% newsItem.body.forEach(function(bodyItem) { %>
+    <p><%= bodyItem %></p>
+    <% }); %>
+    </div>
+    </div>
+    </div>
+    </div>
+    <% }); %>
+</div>
+</body>
+</html>
