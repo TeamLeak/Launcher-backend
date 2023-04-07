@@ -5,7 +5,7 @@ const informationJSON = require('../../utils/InformationParser');
 
 /* Рендерим саму форму. */
 router.get('/', function(req, res, next) {
-    res.render('information-admin', { title: 'News Control!', informationJSON });
+    res.render('admin/information-admin', { title: 'News Control!', informationJSON });
 });
 
 /* POST обрабатываем формочку. */

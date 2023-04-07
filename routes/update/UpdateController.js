@@ -4,7 +4,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('update-admin', { title: 'Update Control' });
+    res.render('admin/update-admin', { title: 'Update Control' });
 });
 
 /* POST обрабатываем формочку. */

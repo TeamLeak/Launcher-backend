@@ -5,7 +5,7 @@ const newsJSON = require('../../utils/NewsletterParser')
 
 /* Рендерим саму форму. */
 router.get('/', function(req, res, next) {
-    res.render('news-admin', { title: 'News Control!' });
+    res.render('admin/news-admin', { title: 'News Control!' });
 });
 
 /* POST обрабатываем формочку. */

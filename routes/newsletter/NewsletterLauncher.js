@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     const newsData = fs.readFileSync(newsPath);
     const news = JSON.parse(newsData);
 
-    res.render('launcherUI', { news: news.news });
+    res.render('launcher/launcherUI', { news: news.news });
 });
 
 module.exports = router;

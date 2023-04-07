@@ -4,7 +4,7 @@ const router = express.Router();
 /* Обрабатываем GET, вернув ему login.ejs */
 router.get('/', function(req, res, next) {
     // Render the login page
-    res.render('login', { title: 'LOGIN' });
+    res.render('login/login', { title: 'LOGIN' });
 });
 
 // Обрабатываем POST из формы, если всё успешно -> перенаправляем в админку. */
